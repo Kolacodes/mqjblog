@@ -1,0 +1,154 @@
+<% include ../partials/header %>
+
+
+
+<div class="menu-wrap">
+  <input type="checkbox" class="toggler">
+  <div class="hamburger"><div></div></div>
+  <div class="menu">
+    <div>
+      <div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="http://www.myquranjourney.net">About</a></li>
+          <li><a href="/shortstories">Short Stories</a></li>
+          <li><a href="/clips">MQJ Clips</a></li>
+          <li><a href="tel:07061862072">Contact</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Signup</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<body>
+
+<!-- <section class="modal" > -->
+
+<div id='simpleModal' class='modalC'>
+  <div class='modal-content'>
+    <div class='modal-header'>
+      <span class='closeBtn'>&times;</span>
+      <h2>Afrocodez</h2>
+    </div>
+    <div class='modal-body'>
+      <p>Assalaamu 'alaykum..</p>
+  <p>Building a groundbreaking brand never has been a one man's burden. Every successful brand was indeed a result of a few great hands come together. <br> 
+  <p> Afrocodez is such an intuitive Muslim software developer and he's our go-to guy. Got a few hiccups with your brand? Speak to Afrocodez.
+    <br>
+     With great minds like him you will in no time get your brand to the dreamland, In Shaa Allah.</p>
+      </p>
+    </div>
+    <div class='modal-footer'>
+      <h3> <a href="http://www.afrocodez.com">Visit Site</a> </h3>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- showcase -->
+  <div class="customContainer" id="showcase">
+    <div class="mobileBar wrapperOne">
+        <div class="toggler showcaseWrapItemOne">
+          <!-- Toggler Goes Here -->
+        </div>
+        <div class="logo showcaseWrapItemTwo">
+          <a href="#">
+					 <img src="images/logo2.jpeg" alt="Capture by Lucy" class="MobileBarBrandingLogo">
+				</a>
+        </div>
+        <div class="padlock showcaseWrapItemThree">
+          <!-- Padlock Goes Here -->
+        </div>
+   </div>
+   <div class="clr"></div>
+   <div class="header">
+    <h1 class="header">Welcome to MQJ Blog</h1>
+    <br>
+</div> 
+  </div>
+	<!-- end of showcase -->
+
+
+<!-- article section -->
+<section class="customContainer">
+  
+</section>
+<!-- end of article section -->
+  
+
+
+<section class="blogsDisplaySection">
+	<% all_posts.slice().reverse().forEach(function(each_post) { %>
+<div class="wrapItem2"><a href="/posts/<%= each_post._id %>"><img class="blog-post-image2" alt="" src="<%=each_post.image%>" /></a>
+		<p> <a class="postTitleIndex" href="/posts/<%= each_post._id %>"> <em class="postTitleIndex"><%- each_post.title%></em> </a></p>
+</div>
+<%  }); %>
+</section>
+
+<!-- br to avoid floating -->
+<br>
+
+<!-- <div class="clr"></div> -->
+
+
+
+<br>
+<br>
+<br>
+
+
+<div class="container">
+  <div class="row">
+      <!-- <h6 class="blogTitle" style="text-align: center">SUbscribe to our newsletter</h6> -->
+      <div style="width: 60%; margin: 25px auto;">
+      <form action = "/subscribe" method = "post">
+        <div>
+          <h4 style="text-align: center;">Want more of these?
+          <br>
+          <br>
+          Kindly fill out the fields
+        </h4>
+        <br>
+          
+        </div>
+        <!-- <br> -->
+          <div class="form-group inner-addon left-addon">
+          <input class="form-control" type="text" name="firstName" placeholder="First Name" required >
+          </div>
+          <div class="form-group inner-addon left-addon">
+            <input class="form-control" type="text" name="lastName" placeholder="Last Name" required >
+            </div>
+          <div class="form-group inner-addon left-addon">
+          <input class="form-control" type="email" name="email" placeholder="Email" required >
+          </div>
+          <div class="form-group">
+          <input style="background-color: rgb(222, 191, 115); border: none;" class="btn btn-lg btn-primary btn-block" type="submit" value = "Subscribe">
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- end of blogs display section -->
+  
+ <!-- footer -->
+ <div class="customContainer footerSection">
+   <div class="">
+		 <p>Copyright MQJ &copy; 2020. All rights reserved</p>
+		 <p>Created by <a href="http://afrocodez.com"><span>Afrocodez</span></a></p>
+   </div>
+</div>
+<!-- end of footer -->  
+
+<script src='/js/bundle.js'></script>
+
+</body>
+</html>
+
+
+

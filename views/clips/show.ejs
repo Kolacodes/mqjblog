@@ -1,0 +1,141 @@
+<% include ../partials/header %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145835297-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-145835297-2');
+</script>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="favicon.ico">
+		<title><%-found_clip.title%></title>
+    <link href="/css/luccy.css" rel="stylesheet">
+  <link href="/css/menu.css" rel="stylesheet" />
+	</head>
+
+  
+<!-- ################  NAVBAR SECTION      ########################################## -->
+  
+  
+<div class="menu-wrap">
+  <input type="checkbox" class="toggler">
+  <div class="hamburger"><div></div></div>
+  <div class="menu">
+    <div>
+      <div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="http://www.myquranjourney.net">About</a></li>
+          <li><a href="/clips">MQJ Clips</a></li>
+          <li><a href="tel:07061862072">Contact</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Signup</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ################  SHOWCASE SECTION      ########################################## -->
+
+  <div class="customContainer">
+    <div class="mobileBar wrapperOne">
+        <div class="toggler showcaseWrapItemOne">
+          <!-- Toggler Goes Here -->
+        </div>
+        <div class="logo showcaseWrapItemTwo">
+          <a href="#">
+          <img src="https://images.unsplash.com/photo-1557231102-1345785056ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="" class="MobileBarBrandingLogo"> </a>
+        </div>
+        <div class="padlock showcaseWrapItemThree">
+          <!-- Padlock Goes Here -->
+        </div>
+   </div>
+   <div class="clr"></div>
+  </div>
+  <!-- end of showcase -->
+
+
+<!-- article section -->
+<section class="container">
+  <div class="blogPostSection">
+    <article>
+
+      <h1 class="blogTitle"><%-found_clip.title%></h1>
+						<div class="author">Speaker: <%-found_clip.speaker%></div>
+						<!-- <br> -->
+      <p>
+        <div class="author"><i class="fa fa-file-audio-o" aria-hidden="true"></i> <%-found_clip.duration%></div>   
+
+      </p>
+         
+			<img class="figure" src="<%=found_clip.image%>" alt="">
+			<br>
+      <div class="body"><%-found_clip.desc%></div>
+      
+
+    </article>
+  </div> 
+</section>
+<br>
+<!-- end of article section -->
+
+
+
+												
+<!-- ################  COMMENT SECTION      ########################################## -->
+
+
+
+
+<!-- ################  End of comment section      ########################################## -->
+
+<div class="col text-center">
+  <button class="download-counter btn btn-default read-more">
+    <a href="<%=found_clip.clipUrl%>">
+      <i class="fa fa-file-audio-o" aria-hidden="true"></i>
+      Listen & Download
+    </a>
+  </button>
+</div>
+
+
+
+<div id='simpleModal' class='modalC'>
+  <div class='modal-content'>
+    <div class='modal-header'>
+      <span class='closeBtn'>&times;</span>
+      <h2>Afrocodez</h2>
+    </div>
+    <div class='modal-body'>
+      <p>Assalaamu 'alaykum..</p>
+  <p>Building a groundbreaking brand never has been a one man's burden. Every successful brand was indeed a result of a few great hands come together. <br> 
+  <p> Afrocodez is such an intuitive Muslim software developer and he's our go-to guy. Got a few hiccups with your brand? Speak to Afrocodez.
+    <br>
+     With great minds like him you will in no time get your brand to the dreamland, In Shaa Allah.</p>
+      </p>
+    </div>
+    <div class='modal-footer'>
+      <h3> <a href="http://www.afrocodez.com">Visit Site</a> </h3>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer %>
+</body>
+</html>

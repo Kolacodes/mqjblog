@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+<link href="/css/luccy.css" rel="stylesheet">
+	<link href="/css/menu.css" rel="stylesheet" />
+    <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+
+<div class="container">
+    <div class="row">     
+            <div style="width:90%; margin:100px auto ">
+                <h1 class="header" style="text-align: center;">Add a New Post</h1>
+                <form action="/posts" method="POST">
+                    <div class="form-group"> <input class="form-control" type="text" name="title" placeholder="title"> </div>
+                    <!-- <div class="form-group"> <input class="form-control" type="text" name="body" placeholder="enter post" min="0.01" step="0.01"> </div> -->
+                    <div class="form-group"> <input class="form-control" type="text" name="author" placeholder="author"> </div>
+                    <div class="form-group"> <input class="form-control" type="date" name="date" placeholder="date"> </div>
+                    <div class="form-group"> <input class="form-control" type="text" name="postedBy" placeholder="postedBy"> </div>
+                    <div class="form-group"> <input class="form-control" type="text" name="image" placeholder="cover image url"> </div>
+                    <div class="form-group"> <textarea name="body" class="form-control" id="" cols="60" rows="20" placeholder="review">  Write post</textarea></div>
+                    <div class="form-group"> <button style="background-color: rgb(222, 191, 115);" class="btn btn-lg btn-primary btn-block">Submit!</button> </div>
+                </form>   
+                <a href="/posts">Go Back</a>
+            </div>
+    </div>
+</div>
+
+<script>
+    CKEDITOR.replace( 'body' );
+  </script>
+
+ <!-- ################  END OF FORM SECTION      ##########################################  -->
+
+<% include ../partials/footer %>

@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+ /* ################  CSS VARIABLES      ########################################## */
+
+:root{
+  --primary-color: #f4837d;
+  --secondary-color:#3b4b7f;
+  --secondary-color:rgb(59, 75, 127);
+  --primary-background: #fff;
+  --secondary-background: #f7f7f7;
+  --background-light-blue:#ddd;
+  --primary-text:#757575;
+}
+
+body{
+  background: #f7f7f7;
+  background-color: var(--primary-background);
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: .02em;
+  line-height: 2em;
+  text-transform: none;
+  color: #757575;
+
+}
+.mobileBar{
+  background-color: var(--primary-background);
+}
+
+
+
+ /* ################  UTILITY CLASSES      ########################################## */
+
+a{
+  text-decoration: none !important;
+  list-style: none;
+  color: var(--primary-text);
+}
+.customContainer{
+  width: 100%;
+  margin: auto;
+}
+.clr{
+  clear: both;
+}
+
+
+ /* ################  POPUP MODAL STYLES      ########################################## */
+
+:root {
+  --primary-color: #f4837d;
+	--MainDark: #333;
+	--MainWhite: #fff;
+	--MainWhiteGrey: #f4f4f4;
+	--MainGray: #ccc;
+	--MainBlack: #000;
+  }
+  
+  .button {
+	background: var(--primary-color);
+	padding: .5rem .3rem;
+	border: none;
+  }
+  
+  .button:hover {
+	background: var(--MainDark);
+  }
+  
+  .modalC {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  /* background-color: var(--MainWhiteGrey); */
+
+  }
+  
+  .modal-content {
+  background-color: var(--MainWhiteGrey);
+	margin: 5% auto;
+	z-index: 1;
+	padding: 15px;
+	width: 80%;
+	box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+	animation-name: modalopen;
+  animation-duration: 1s;
+  line-height: 1.3em;
+  }
+  
+  @keyframes modalopen {
+	from {opacity: 0}
+	to {opacity: 1};
+  }
+  
+  .modal-header h2, .modal-footer h2 {
+	margin: 0;
+  }
+  
+	
+.modal-header {
+  background: rgb(222, 191, 115);
+  background: var(--primary-color);
+	padding: 1rem;
+  font-weight: 600;
+  font-style: normal;
+	font-size: 30px;
+  /* color: var(--MainGrey); */
+  color: var(--MainWhite);
+  
+  padding-right: 15%;
+  padding-left: 15%;
+  letter-spacing: 0em;
+  line-height: 1.3em;
+  text-transform: none;
+  text-align: center;
+  text-transform: none;
+}
+
+
+.modal-footer {
+  background: rgb(222, 191, 115);
+  background: var(--primary-color);
+  
+	padding: 10px;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  padding-right: 15%;
+  padding-left: 15%;
+  color: var(--MainWhite) !important;
+  letter-spacing: 0em;
+  line-height: 1.3em;
+  text-transform: none;
+  text-align: center;
+  text-transform: none;
+}
+
+.modal-footer a{
+  color: var(--MainWhite);
+
+}
+  
+  .closeBtn {
+	color: var(--MainGray);
+	float: right;
+	font-size: 2rem;
+  }
+  
+  .closeBtn:hover, closeBtn:focus {
+	color: red;
+	text-decoration: none;
+	cursor: pointer;
+  }
+
+
+
+#showcase{
+}
+
+.wrapperOne{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 7%;
+  padding-top: 2.5%;
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-bottom: 2.5%;
+}
+
+.MobileBarBrandingLogo{
+  width: 200px;
+}
+
+
+@media (min-width:768px){
+  .MobileBarBrandingLogo{
+  width: 400px;
+  }
+  .header{
+    font-size: 50px;
+    font-weight: 800;
+  }
+}
+
+.showcaseWrapItemOne{
+  padding-top: 15%;
+}
+
+
+.showcaseWrapItemThree{
+  padding-top: 15%;
+}
+
+.header {
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  padding-right: 15%;
+  padding-left: 15%;
+  color: rgb(222, 191, 115);
+  letter-spacing: 0em;
+  line-height: 1.3em;
+  text-transform: none;
+  text-align: center;
+  text-transform: none;
+}
+
+
+
+@media (min-width:768px){
+  .MobileBarBrandingLogo{
+  width: 400px;
+  }
+  .header{
+    font-size: 50px;
+    font-weight: 800;
+  }
+}
+
+
+
+ /* ################  BLOGS DISPLAY SECTION STYLES      ########################################## */
+
+
+.blogsDisplaySection{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5%;
+  row-gap: 5%;
+  padding-top: 5%;
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-bottom: 5%;
+  margin-bottom: 10%;
+  text-align: center;
+}
+
+@media (min-width:768px){
+  .blogsDisplaySection{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width:960px){
+  .blogsDisplaySection{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.blog-post-image2{
+  height: 300px;
+  width: 200px;
+}
+
+@media (max-width:560px){
+  .blog-post-image2{
+    height: 200px;
+    width: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+
+  }
+.blogsDisplaySection{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 7%;
+  row-gap: 3%;
+  padding-top: 3%;
+  padding-right: 2%;
+  padding-left: 2%;
+  padding-bottom: 3%;
+  margin-bottom: 25%;
+  margin-right: 10%;
+  margin-left: 10%;
+
+  text-align: center;
+}
+}
+
+
+
+
+ /* ################  BLOG POST SECTION      ########################################## */
+
+
+.blogPostSection{
+  padding-top: 10%;
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-bottom: 15%;
+}
+
+.blogTitle{
+  color: var(--secondary-color);
+}
+
+.postTitleIndex{
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  font-size: small;
+  color: rgb(222, 191, 115);
+  line-height: 0.5em;
+}
+
+
+.clipTitleIndex{
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  font-size: small;
+  color: var(--primary-text);
+  line-height: 0.5em;
+}
+
+.blogTitle {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  letter-spacing: 0em;
+  line-height: 1.5em;
+  text-transform: none;
+  text-align: center;
+  -webkit-box-ordinal-group: 2;
+  order: 2;
+  margin: 0px 0px 32px;
+}
+
+.author{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 17px;
+    letter-spacing: 0em;
+    text-transform: none;
+    color: rgb(222, 191, 115);
+  text-align: center;
+}
+.date{
+  text-align: center;
+}
+
+@media (max-width: 768px){
+.figure {
+  max-width: 1500px;
+  width: 75%;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 40px;
+  margin-inline-end: 40px;
+}
+}
+
+@media (min-width: 768px){
+  .figure {
+    /* max-width: 2500px; */
+    width: 75%;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+  }
+  }
+
+
+ /* ################  COMMENT SECTION STYLES    ##########################################  */
+  
+
+.commentSection{
+  padding: 5% 10% 5% 10%;
+  margin: 5% 10% 1% 10% ;
+  background-color: var(--secondary-background);
+}
+
+
+.pullRight{
+  position: absolute;
+  left: 50%;
+} 
+
+
+.commentCounterBtn{
+  background: white;
+  background: rgb(222, 191, 115);
+  padding: 3px;
+  border: solid white;
+  color: white;
+  font-weight: 600;
+}
+
+.commentCounterText{
+  color: white;
+}
+
+.addNewCommentBtn{
+  background: white;
+  padding: 2px;
+  color: rgb(222, 191, 115);
+  border: solid white;
+  font-weight: 600;
+}
+
+.addNewCommentText{
+  color: rgb(222, 191, 115);
+}
+
+#delete-book {
+  display: inline;
+}
+
+
+.fa-user{
+  color: var(--primary-text);
+}
+
+
+.read-more  {
+  background-color: var(--secondary-color);
+  border: solid var(--secondary-color);
+  background-color: var(--primary-color);
+  border: solid var(--primary-color);
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 12px;
+	letter-spacing: 1.2px;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+
+.read-more a{
+  color: white;
+}
+.read-more:hover {
+	background-color: rgb(222, 191, 115);
+	color: #fff;
+}
+
+ /* ################  FOOTER SECTION      ##########################################  */
+
+
+.footerSection{
+  background-color: var(--secondary-background);
+  margin-top: 10%;
+  padding-top: 7%;
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-bottom: 7%;
+  text-align: center;
+}

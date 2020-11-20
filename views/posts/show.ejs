@@ -1,0 +1,237 @@
+<% include ../partials/header %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145835297-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-145835297-2');
+</script>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="favicon.ico">
+		<title><%-found_post.title%></title>
+    <link href="/css/luccy.css" rel="stylesheet">
+  <link href="/css/menu.css" rel="stylesheet" />
+
+	</head>
+
+  
+<!-- ################  NAVBAR SECTION      ########################################## -->
+  
+  
+<div class="menu-wrap">
+  <input type="checkbox" class="toggler">
+  <div class="hamburger"><div></div></div>
+  <div class="menu">
+    <div>
+      <div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="http://www.myquranjourney.net">About</a></li>
+          <li><a href="/shortstories">Short Stories</a></li>
+          <li><a href="/clips">MQJ Clips</a></li>
+          <li><a href="tel:07061862072">Contact</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Signup</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ################  SHOWCASE SECTION      ########################################## -->
+
+  <div class="customContainer">
+    <div class="mobileBar wrapperOne">
+        <div class="toggler showcaseWrapItemOne">
+          <!-- Toggler Goes Here -->
+        </div>
+        <div class="logo showcaseWrapItemTwo">
+          <a href="/">
+          <img src="/images/logo2.jpeg" alt="" class="MobileBarBrandingLogo"> </a>
+        </div>
+        <div class="padlock showcaseWrapItemThree">
+          <!-- Padlock Goes Here -->
+        </div>
+   </div>
+   <div class="clr"></div>
+  </div>
+  <!-- end of showcase -->
+
+
+<!-- article section -->
+<section class="container">
+  <div class="blogPostSection">
+    <article>
+
+      <h1 class="blogTitle"><%-found_post.title%></h1>
+						<div class="author">&copy; <%-found_post.author%></div>
+						<!-- <br> -->
+
+			<div class="author"><%-found_post.date%></div>
+			<img class="figure" src="<%=found_post.image%>" alt="">
+
+			<br>
+      <div class="body"><%-found_post.body%></div>
+      
+
+    </article>
+  </div> 
+</section>
+<br>
+<!-- end of article section -->
+
+
+
+												
+<!-- ################  COMMENT SECTION      ########################################## -->
+
+
+					
+<section class="commentSection">
+      <p>
+          <button class="commentCounterBtn">
+            <a class="commentCounterText" href="#">
+              <%= found_post.comments.length %>
+            COMMENT<% if (found_post.comments.length > 1){%>S
+                  <% } else {}; %>
+            </a>
+        </button>
+          <button class="addNewCommentBtn pullRight">
+              <a class="addNewCommentText" href="/posts/<%=found_post._id%>/comments/new">
+                Add New Comment
+              </a>
+          </button>
+      </p>
+
+      <br>
+      <br>
+
+    <% found_post.comments.forEach(function(comment){ %>
+          
+      <div class="row">
+        <div class="col-md-12"></div>
+            <p>
+              <i class="fa fa-user" aria-hidden="true"></i>    
+              <strong style="color: rgb(222, 191, 115)">
+                <%= comment.author.username %>
+              </strong>
+            </p>
+            
+          <p style="font-size: small;"><%= comment.body %></p>
+          <br>
+
+      <% if(currentUser && String(comment.author.id) === String(currentUser._id)){ %>
+          <a class="btn btn-xs btn-warning"
+            href="/posts/<%=found_post._id%>/comments/<%=comment._id%>/edit">
+            Edit
+          </a>
+          <form id="delete-book" action="/posts/<%=found_post._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+            <input type="submit" class="btn btn-xs btn-danger" value="Delete"> </input>
+          </form>
+      <% }%>
+      </div>
+    <% }); %>
+    <br>
+
+ 
+
+
+    <!-- <div class="col text-center">
+      <button class="btn btn-default read-more">
+        <a href="/shortstories">
+          You like short stories?
+        </a>
+      </button>
+    </div> -->
+
+
+    <div class="col text-center">
+      <button class="btn btn-default read-more">
+        <a href="http://www.myquranjourney.net">
+          Join us in this journey!
+        </a>
+      </button>
+    </div>
+</section>
+<br>
+
+
+<!-- ################  End of comment section      ########################################## -->
+
+
+<br>
+<br>
+<br>
+
+
+<div class="container">
+  <div class="row">
+      <!-- <h6 class="blogTitle" style="text-align: center">SUbscribe to our newsletter</h6> -->
+      <div style="width: 60%; margin: 25px auto;">
+      <form action = "/subscribe" method = "post">
+        <div>
+          <h4 style="text-align: center;">Want more of this?
+          <br>
+          <br>
+          We would deliver lots more into your inbox
+        </h4>
+        <br>
+          
+        </div>
+        <!-- <br> -->
+          <div class="form-group inner-addon left-addon">
+          <input class="form-control" type="text" name="firstName" placeholder="First Name" required >
+          </div>
+          <div class="form-group inner-addon left-addon">
+            <input class="form-control" type="text" name="lastName" placeholder="Last Name" required >
+            </div>
+          <div class="form-group inner-addon left-addon">
+          <input class="form-control" type="email" name="email" placeholder="Email" required >
+          </div>
+          <div class="form-group">
+          <input style="background-color: rgb(222, 191, 115); border: none;" class="btn btn-lg btn-primary btn-block" type="submit" value = "Subscribe">
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div id='simpleModal' class='modalC'>
+  <div class='modal-content'>
+    <div class='modal-header'>
+      <span class='closeBtn'>&times;</span>
+      <h2>Afrocodez</h2>
+    </div>
+    <div class='modal-body'>
+      <p>Assalaamu 'alaykum..</p>
+  <p>Building a groundbreaking brand never has been a one man's burden. Every successful brand was indeed a result of a few great hands come together. <br> 
+  <p> Afrocodez is such an intuitive Muslim software developer and he's our go-to guy. Got a few hiccups with your brand? Speak to Afrocodez.
+    <br>
+     With great minds like him you will in no time get your brand to the dreamland, In Shaa Allah.</p>
+      </p>
+    </div>
+    <div class='modal-footer'>
+      <h3> <a href="http://www.afrocodez.com">Visit Site</a> </h3>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer %>
+</body>
+</html>

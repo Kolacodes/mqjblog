@@ -1,0 +1,40 @@
+
+<% include partials/header %>
+
+
+<link href="/css/luccy.css" rel="stylesheet">
+	<link href="/css/menu.css" rel="stylesheet" />
+
+
+<br>
+<br>
+<br>
+
+<div class="container">
+<div class="row">
+    <h1 class="header" style="text-align: center">Sign Up</h1>
+    <div style="width: 60%; margin: 25px auto;">
+    <form action = "/register" method = "post">
+        <div class="form-group inner-addon left-addon">
+        <i class="glyphicon glyphicon-user"></i>
+        <input class="form-control" type="text" name="username" placeholder="Username">
+        </div>
+        <div class="form-group inner-addon left-addon">
+        <i class="glyphicon glyphicon-envelope"></i>
+        <input class="form-control" type="email" name="email" placeholder="Email">
+        </div>
+        <div class="form-group inner-addon left-addon">
+        <i class="glyphicon glyphicon-lock"></i>
+        <input class="form-control" type="password" name="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+        <input style="background-color: rgb(222, 191, 115);" class="btn btn-lg btn-primary btn-block" type="submit" value = "Create User">
+        </div>
+    </form>
+    <a href="/posts">Go Back</a>
+  </div>
+</div>
+</div>
+
+<% include partials/footer %>
+
